@@ -33,8 +33,8 @@ func getSignatureKey(string_to_sign, key, datestamp, region, service string) str
 
 func SendRequest(data AwsRequest) string {
 	// Timestamps
-	t := time.Now()
-	amzdate := fmt.Sprintf("%04d%02d%02dT%02d%02d%02dZ",t.Year(),t.Month(),t.Day(),t.Hour() - 2,t.Minute(),t.Second())
+	t := time.Now().UTC()
+	amzdate := fmt.Sprintf("%04d%02d%02dT%02d%02d%02dZ",t.Year(),t.Month(),t.Day(),t.Hour(),t.Minute(),t.Second())
 	datestamp := fmt.Sprintf("%04d%02d%02d",t.Year(),t.Month(),t.Day())
 
 	// Create canonical request
