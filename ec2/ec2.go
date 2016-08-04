@@ -1,7 +1,7 @@
 package ec2
 
 import (
-	"github.com/dsmatilla/aws"
+	"github.com/dsmatilla/go-aws"
 )
 
 func DescribeRegions(accessKey, secretKey string) string {
